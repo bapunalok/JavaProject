@@ -1,0 +1,77 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="helloBean" class="com.rs.spring.example.HelloWorld">
+		<property name="name" value="alok" />
+		<property name="batch" value="morning" />
+	</bean>
+	<bean id="student" class="com.rs.spring.example.Student">
+		<property name="name" value="akash" />
+		<property name="address" ref="address"></property>
+
+	</bean>
+	<bean id="address" class="com.rs.spring.example.Address">
+		<property name="city" value="BDK" />
+	</bean>
+	<bean id="assembleyseats" class="com.rs.spring.example.Assembley">
+		<property name="assembleyseats">
+			<set>
+				<value>mlas</value>
+				<value>mps</value>
+				<value>employees</value>
+				<value>officers</value>
+			</set>
+		</property>
+	</bean>
+	<bean id="studentData" class="com.rs.spring.example.College">
+		<property name="studentData">
+			<list>
+				<value>mark</value>
+				<value>name</value>
+				<value>age</value>
+				<value>studentId</value>
+				<value>name</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="data" class="com.rs.spring.example.WelcomeBean">
+		<property name="data">
+			<map>
+				<entry key="k1">
+					<value>10</value>
+				</entry>
+				<entry key="k2">
+					<value>java4s</value>
+				</entry>
+				<entry key="k3">
+					<value>10.55</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="demoConstructor"
+		class="com.rs.spring.example.DemoConstructor">
+		<constructor-arg name="name" value="alok" index="0" />
+		<constructor-arg value="male" index="2" />
+		<constructor-arg name="dAddress" ref="dAddress" />
+
+	</bean>
+	<bean id="dAddress" class="com.rs.spring.example.DAddress">
+		<property name="city" value="BDK" />
+	</bean>
+
+	<!-- <bean id="catagories" class="com.rs.spring.example.Catagories" autowire="byName"> 
+		<property name="name" value="phusicBook" /> </bean> -->
+	<bean id="catagories" class="com.rs.spring.example.Catagories"
+		autowire="byType">
+		<property name="name" value="phusicBook" />
+	</bean>
+
+	<bean id="bk" class="com.rs.spring.example.Books">
+		<property name="bookname" value="english" />
+		<property name="bookprice" value="2000"></property>
+	</bean>
+</beans>
