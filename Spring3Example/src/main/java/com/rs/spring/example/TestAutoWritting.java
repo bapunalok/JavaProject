@@ -14,7 +14,7 @@ public class TestAutoWritting {
 
 		Object object = factory.getBean("catagories");
 		Catagories catagories = (Catagories) object;
-		System.out.println(catagories);
+		//System.out.println(catagories);
 
 	}
 
